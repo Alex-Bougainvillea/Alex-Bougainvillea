@@ -53,3 +53,33 @@ chmod +x reg
 ![image](https://github.com/user-attachments/assets/59da4b57-a3a3-4093-b61b-41442582a2e4)
 
 ## Задание 6
+
+```
+nano cheker.sh
+
+#!/bin/bash
+ 
+for file in *.c *.js *.py; do
+    if [[ -f "$file" ]]; then
+        f_line=$(head -n 1 "$file")
+        if [[ "$file" == *.c || "$file" == *.js ]]; then
+            if [[ "$f_line" =~ ^[[:space:]]*// ]]; then
+                echo "Файл $file содержит комментарий в первой строке."
+            else
+                echo "Файл $file не содержит комментарий в первой строке."
+            fi
+        elif [[ "$file" == *.py ]]; then
+            if [[ "$f_line" =~ ^[[:space:]]*# ]]; then
+                echo "Файл $file содержит комментарий в первой строке."
+            else
+                echo "Файл $file не содержит комментарий в первой строке."
+            fi
+        fi
+    fi
+done
+
+chmod +x cheker.sh
+./cheker.sh
+```
+
+![image](https://github.com/user-attachments/assets/3b3d119f-ec70-4916-9997-2fb31f26f881)
