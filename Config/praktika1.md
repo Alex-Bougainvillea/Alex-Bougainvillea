@@ -38,3 +38,12 @@ chmod +x ident.sh
 ./ident.sh hello.c
 
 ```
+
+![image](https://github.com/user-attachments/assets/7d27bfed-5dc9-4e5f-bd35-6c6a77ee5862)
+
+## Задание 5
+
+```
+
+```
+
