@@ -127,3 +127,40 @@ chmod +x cheker.sh
 ```
 
 ![image](https://github.com/user-attachments/assets/3b3d119f-ec70-4916-9997-2fb31f26f881)
+
+## Задание 7
+
+```
+nano f_duplic.sh
+
+#!/bin/bash
+if [ -z "$1" ]; then
+    echo "Использование: $0 <путь>"
+    exit 1
+fi
+ 
+search_f="$1"
+ 
+fihash=$1;rch_path" -type f -exec sha256sum {} + | sort | awk '{
+    hash=$1;
+    file=$2;
+    files[hash] = (files[hash] ? files[hash] ORS file : file);
+}
+END {
+    for (hash in files) {
+        split(files[hash], arr, ORS);
+        if (length(arr) > 1) {
+            print "Дупликаты для хеша " hash ":";
+            for (i in arr) {
+                print " " arr[1];
+            }
+            print "";
+        }
+    }
+}'
+
+chmod +x f_duplic.sh
+./f_duplic.sh <путь_к_каталогу_подкаталогу>
+```
+
+![image](https://github.com/user-attachments/assets/11aee96f-9ec8-4ebc-8a0b-bcf684b65c5e)
