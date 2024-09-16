@@ -44,6 +44,12 @@ chmod +x ident.sh
 ## Задание 5
 
 ```
+nano reg
 
+chmod +x reg
+./reg banner.txt
 ```
 
+![image](https://github.com/user-attachments/assets/59da4b57-a3a3-4093-b61b-41442582a2e4)
+
+## Задание 6
