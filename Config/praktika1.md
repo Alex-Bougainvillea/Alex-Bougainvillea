@@ -23,6 +23,16 @@ awk '{print $2, $1}' /etc/protocols | sort -nr | head -n 5
 ```
 nano banner.sh
 
+#!/bin/bash
+text=$*
+length=${#text}
+for i in $(seq 1 $((length + 2))); do
+     line+="-"
+done
+echo "+${line}+"
+echo "| ${text} |"
+echo "+${line}+"
+
 chmod +x banner.sh
 ./banner.sh Hello from RTU MIREA!
 ```
