@@ -209,3 +209,22 @@ chmod +x replace_f.sh
 ```
 
 ![image](https://github.com/user-attachments/assets/a48cfa4d-92f5-4598-86e0-9948aff511d4)
+
+## Задание 10
+
+```
+nano find_empty_filse.sh
+#!/bin/bash
+ 
+if [ $# -ne 1]; then
+    echo "Использование: $0 <путь>"
+    exit 1
+fi
+ 
+directory="$1"
+ 
+find "$directory" -type f -empty -exec file {} \; | grep "empty" | cut -d: -f1
+
+chmod +x find_empty_files.sh
+./find_empty_files.sh /путь/к/директории
+```
