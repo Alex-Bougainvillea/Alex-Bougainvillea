@@ -213,7 +213,7 @@ chmod +x replace_f.sh
 ## Задание 10
 
 ```
-nano find_empty_filse.sh
+nano find_empty_files.sh
 #!/bin/bash
  
 if [ $# -ne 1]; then
