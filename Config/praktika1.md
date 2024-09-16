@@ -165,3 +165,26 @@ chmod +x f_duplic.sh
 ```
 
 ![image](https://github.com/user-attachments/assets/11aee96f-9ec8-4ebc-8a0b-bcf684b65c5e)
+
+## Задание 8
+
+```
+nano archive_files.sh
+
+#!/bin/bash
+
+if [ $# -ne 2 ]; then
+  echo "Использование: $0 <путь> <расширение>"
+  exit 1
+fi
+
+direct="$1"
+exten="$2"
+archive_name="archive_$extension.tar"
+
+find "$direct" -type f -name "*.$exten" -print0 | tar --null -cvf "$archive_name" --files-from -
+
+echo "Архив $archive_name создан."
+```
+
+## Задание 9
