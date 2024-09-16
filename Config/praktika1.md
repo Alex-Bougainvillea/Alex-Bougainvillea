@@ -28,3 +28,13 @@ chmod +x banner.sh
 ```
 
 ![image](https://github.com/user-attachments/assets/a86714b9-0a9e-42ad-8ad2-7a6a75dd9ea4)
+
+## Задание 4
+
+```
+nano ident.sh
+
+chmod +x ident.sh
+./ident.sh hello.c
+
+```
