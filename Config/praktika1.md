@@ -188,3 +188,24 @@ echo "Архив $archive_name создан."
 ```
 
 ## Задание 9
+
+```
+nano replace_f.sh
+
+#!/bin/bash
+if [ $# -ne 2]; then
+    echo "Использование: $0 <входной файл> <выходной файл>"
+    exit 1
+fi
+ 
+input_file="$1"
+output_file="$2"
+ 
+sed 's/    /\t/g' "$input_file" > "$output_file"
+echo "Замена завершена. Результат записан в $output_file."
+
+chmod +x replace_f.sh
+./replace_f.sh input.txt output.txt
+```
+
+![image](https://github.com/user-attachments/assets/a48cfa4d-92f5-4598-86e0-9948aff511d4)
