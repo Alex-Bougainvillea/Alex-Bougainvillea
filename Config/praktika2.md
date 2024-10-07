@@ -101,5 +101,91 @@ solve minimize max(versions);
 # Задание 6
 
 ```
+var 0..2: root_version;   
+var 0..2: foo_version;     
+var 0..2: left_version;    
+var 0..2: right_version;   
+var 0..2: shared_version;  
+var 0..2: target_version;   
+
+% root 1.0.0 зависит от foo ^1.0.0 и target ^2.0.0
+constraint root_version = 1 /\ foo_version >= 1 /\ target_version >= 2;
+% foo 1.1.0 зависит от left ^1.0.0 и right ^1.0.0
+constraint foo_version = 1 -> (left_version >= 1 /\ right_version >= 1);
+% foo 1.0.0 не имеет зависимостей
+constraint foo_version = 0 -> (left_version = 0 /\ right_version = 0);
+% left 1.0.0 зависит от shared >= 1.0.0
+constraint left_version = 1 -> (shared_version >= 1);
+% right 1.0.0 зависит от shared < 2.0.0
+constraint right_version = 1 -> (shared_version < 2);
+% shared 2.0.0 не имеет зависимостей
+constraint shared_version = 2 -> (target_version = 0 \/ target_version = 1 \/ target_version = 2);
+% shared 1.0.0 зависит от target ^1.0.0
+constraint shared_version = 1 -> (target_version >= 1);
+
+constraint target_version >= 1 /\ target_version <= 2;
+
+solve satisfy;
+```
+![image](https://github.com/user-attachments/assets/5ff137a6-0ee9-41e0-98cb-cbfa59f86507)
+
+# Задание 7
 
 ```
+packages = {
+    "root": {
+        "version": "1.0.0",
+        "dependencies": {
+            "foo": "^1.0.0",
+            "target": "^2.0.0"
+        }
+    },
+    "foo": {
+        "version": "1.1.0",
+        "dependencies": {
+            "left": "^1.0.0",
+            "right": "^1.0.0"
+        }
+    },
+    "left": {
+        "version": "1.0.0",
+        "dependencies": {
+            "shared": ">=1.0.0"
+        }
+    },
+    "right": {
+        "version": "1.0.0",
+        "dependencies": {
+            "shared": "<2.0.0"
+        }
+    },
+    "shared": {
+        "version": "2.0.0",
+        "dependencies": {}
+    },
+    "target": {
+        "version": "2.0.0",
+        "dependencies": {}
+    }
+}
+def build_constraints(packages):
+    constraints = []
+    for package, info in packages.items():
+        version_constraint = f"{package}_version = {info['version']}"
+        constraints.append(version_constraint)
+
+        for dependency, version_spec in info['dependencies'].items():
+            if version_spec.startswith("^"):
+                constraints.append(f"{dependency}_version >= {version_spec[1:]}")
+            elif version_spec.startswith(">="):
+                constraints.append(f"{dependency}_version >= {version_spec[2:]}")
+            elif version_spec.startswith("<"):
+                constraints.append(f"{dependency}_version < {version_spec[1:]}")
+
+    return constraints
+constraints = build_constraints(packages)
+
+for constraint in constraints:
+    print(constraint)
+```
+![image](https://github.com/user-attachments/assets/1079ca83-4906-4bb0-9512-8c263c320b76)
