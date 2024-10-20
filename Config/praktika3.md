@@ -102,3 +102,83 @@ F = 0 0 0
 for i in range(10):
     print(generate_phrase(parse_bnf(BNF), 'S'))
 ```
+
+![image](https://github.com/user-attachments/assets/f6e5f95b-0e16-48e9-ad47-8b1d83453f3e)
+
+## Задача 4
+
+```
+import random
+
+def parse_bnf(text):
+    '''
+    Преобразовать текстовую запись БНФ в словарь.
+    '''
+    grammar = {}
+    rules = [line.split('=') for line in text.strip().split('\n')]
+    for name, body in rules:
+        grammar[name.strip()] = [alt.split() for alt in body.split('|')]
+    return grammar
+
+def generate_phrase(grammar, start):
+    '''
+    Сгенерировать случайную фразу.
+    '''
+    if start in grammar:
+        seq = random.choice(grammar[start])
+        return ''.join([generate_phrase(grammar, name) for name in seq])
+    return str(start)
+
+BNF = '''
+S = B | C | D | E | F
+B = (({((()))}))
+C = {}
+D = {()}
+E = ()
+F = {}
+'''
+
+for i in range(10):
+    print(generate_phrase(parse_bnf(BNF), 'S'))
+```
+
+![image](https://github.com/user-attachments/assets/918ebefe-404f-4718-abf4-fabf0f607af5)
+
+## Задача 5 
+
+```
+import random
+
+def parse_bnf(text):
+    '''
+    Преобразовать текстовую запись БНФ в словарь.
+    '''
+    grammar = {}
+    rules = [line.split('=') for line in text.strip().split('\n')]
+    for name, body in rules:
+        grammar[name.strip()] = [alt.split() for alt in body.split('|')]
+    return grammar
+
+def generate_phrase(grammar, start):
+    '''
+    Сгенерировать случайную фразу.
+    '''
+    if start in grammar:
+        seq = random.choice(grammar[start])
+        return ''.join([generate_phrase(grammar, name) for name in seq])
+    return str(start)
+
+BNF = '''
+S = B | C | D | E | F
+B = ((~(y & x)) | (y) & ~x | ~x) & x
+C = y & ~(y)
+D = (~(y) & y & ~y)
+E = ~x
+F = ~((x) & y | (y) | (x)) & x | x | (y & ~y)
+'''
+
+for i in range(10):
+    print(generate_phrase(parse_bnf(BNF), 'S'))
+```
+
+![image](https://github.com/user-attachments/assets/43452aa5-b942-4728-af41-2bf5c4f76952)
