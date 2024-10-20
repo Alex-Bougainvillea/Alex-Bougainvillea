@@ -69,5 +69,36 @@ in { groups = groups, students = students, subject = subject }
 ## Задача 3
 
 ```
+import random
 
+def parse_bnf(text):
+    '''
+    Преобразовать текстовую запись БНФ в словарь.
+    '''
+    grammar = {}
+    rules = [line.split('=') for line in text.strip().split('\n')]
+    for name, body in rules:
+        grammar[name.strip()] = [alt.split() for alt in body.split('|')]
+    return grammar
+
+def generate_phrase(grammar, start):
+    '''
+    Сгенерировать случайную фразу.
+    '''
+    if start in grammar:
+        seq = random.choice(grammar[start])
+        return ''.join([generate_phrase(grammar, name) for name in seq])
+    return str(start)
+
+BNF = '''
+S = B | C | D | E | F
+B = 1 0
+C = 1 0 0
+D = 1 1
+E = 1 0 1 1 0 1
+F = 0 0 0
+'''
+
+for i in range(10):
+    print(generate_phrase(parse_bnf(BNF), 'S'))
 ```
