@@ -1,8 +1,8 @@
-## Практическое задание 2
+# Практическое задание 2. Менеджеры пакетов
 
 А. В. Кузнецов ИКБО-62-23
 
-# Задание 1
+## Задание 1
 
 ```
 pip show matplotlib
@@ -14,7 +14,7 @@ pipdeptree --packages matplotlib
 ```
 ![image](https://github.com/user-attachments/assets/9e0b0e10-b66a-4935-ba25-47d4969b1bab)
 
-# Задание 2
+## Задание 2
 
 ```
 nmp install express
@@ -28,7 +28,7 @@ nmp view express
 npm ls --depth=[depth]
 ```
 
-# Задание 3
+## Задание 3
 
 ```
 digraph {
@@ -58,7 +58,7 @@ digraph {
 ```
 ![image](https://github.com/user-attachments/assets/acf98db3-821f-4cff-aa25-3c8e97b97053)
 
-# Задание 4
+## Задание 4
 
 ```
 include "alldifferent.mzn";  
@@ -74,7 +74,7 @@ solve minimize sum_of_three;
 
 ![image](https://github.com/user-attachments/assets/9bb4a668-6e82-42c5-a4a3-6d3287f10cec)
 
-# Задание 5
+## Задание 5
 
 ```
 array[1..6] of int: menu_versions = [100, 110, 120, 130, 140, 150];       
@@ -98,7 +98,7 @@ solve minimize max(versions);
 ```
 ![image](https://github.com/user-attachments/assets/50a59a7c-3588-4256-96d6-576bc73229ce)
 
-# Задание 6
+## Задание 6
 
 ```
 var 0..2: root_version;   
@@ -129,7 +129,7 @@ solve satisfy;
 ```
 ![image](https://github.com/user-attachments/assets/5ff137a6-0ee9-41e0-98cb-cbfa59f86507)
 
-# Задание 7
+## Задание 7
 
 ```
 packages = {
