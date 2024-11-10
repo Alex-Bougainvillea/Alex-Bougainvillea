@@ -121,3 +121,9 @@ $ git pull server master
 | 
 |     first commit
 ```
+
+## Задача 4
+
+```
+python show_git_objects.py
+```
