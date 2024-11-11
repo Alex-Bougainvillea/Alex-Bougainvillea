@@ -11,7 +11,7 @@ cd <директория проекта>
 # Создайте виртуальное окружение
 python -m venv venv
 
-```
+```bash
 # Активируйте виртуальное окружение
 python -m venv venv
 # Для Windows:
@@ -19,12 +19,6 @@ venv\Scripts\activate
 # Для MacOS/Linux:
 source venv/bin/activate
 pip install pytest
-```
-
-## Запуск
-
-```
-python __main__.py
 ```
 
 # 3. Структура проекта
