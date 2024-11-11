@@ -14,7 +14,7 @@ python -m venv venv
 ```
 # Активируйте виртуальное окружение
 python -m venv venv
-## Для Windows:
+```# Для Windows:```
 venv\Scripts\activate
 ## Для MacOS/Linux:
 source venv/bin/activate
