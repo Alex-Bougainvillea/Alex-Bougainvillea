@@ -5,7 +5,7 @@ import tkinter as tk
 from shell_emulator import ShellEmulator
 
 # Чтение конфигурации
-with open("C:/Users/A.Kuznecov/AppData/Roaming/JetBrains/PyCharmCE2023.3/scratches/config.yml") as f:
+with open("config.yml") as f:
     config = yaml.safe_load(f)
 
 # Распаковка виртуальной файловой системы
