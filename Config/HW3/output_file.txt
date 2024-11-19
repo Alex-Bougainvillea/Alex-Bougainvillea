@@ -3,9 +3,8 @@ var expression_1 = 35;
 var expression_2 = 4;
 var nested_expression = (list (list 10 25 [[+]]) (list 35 7 [[-]]) (list 28 5 [[mod]]));
 var comment = /#
-Сегодня пасмурно
-пойдет дождь
-
+РЎРµРіРѕРґРЅСЏ РїР°СЃРјСѓСЂРЅРѕ
+РїРѕР№РґРµС‚ РґРѕР¶РґСЊ
 #/;
-var array_example = (list [[белый]] [[синий]] [[зеленый]]);
-var string_example = [[Просто строка]];
+var array_example = (list [[Р±РµР»С‹Р№]] [[СЃРёРЅРёР№]] [[Р·РµР»РµРЅС‹Р№]]);
+var string_example = [[РџСЂРѕСЃС‚Рѕ СЃС‚СЂРѕРєР°]];
