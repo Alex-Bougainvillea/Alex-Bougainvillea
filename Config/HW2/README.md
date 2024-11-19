@@ -11,13 +11,23 @@ git init
 # Создадим файлы, подтверждая свои действия коммитами
 
 ```bash
-# Активируйте виртуальное окружение
-python -m venv venv
-# Для Windows:
-venv\Scripts\activate
-# Для MacOS/Linux:
-source venv/bin/activate
-pip install pytest
+$ echo "print('Hello, world!')" > prog.py
+#Добавляем в репозиторий программу
+$ git add prog1.py
+#Добавляем коммит
+$ git commit -m "Add prog1.py"
+
+$ echo "123456789" > test.txt
+#Добавляем в репозиторий программу
+$ git add test.txt
+#Добавляем коммит
+$ git commit -m "Add file test.txt"
+
+$ echo "print('Hello, world!')" > prog.py
+#Добавляем в репозиторий программу
+$ git add prog1.py
+#Добавляем коммит
+$ git commit -m "Add prog1.py"
 ```
 
 #  Запуск
