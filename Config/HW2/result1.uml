@@ -1,0 +1,9 @@
+@startuml
+"MainTree" : Main Tree
+"MainTree" --> "e88f50b677cf80a2323360c7b2e31a9c20d581b0" : commit
+"e88f50b677cf80a2323360c7b2e31a9c20d581b0" --> "readme.md" : modifies
+"MainTree" --> "e732c41ff7c0c2b3556f49387de126b844713129" : commit
+"e732c41ff7c0c2b3556f49387de126b844713129" --> "test.txt" : modifies
+"MainTree" --> "7c530d73b158d46f83762f13da64a2e6dce08f5a" : commit
+"7c530d73b158d46f83762f13da64a2e6dce08f5a" --> "prog1.py" : modifies
+@enduml
