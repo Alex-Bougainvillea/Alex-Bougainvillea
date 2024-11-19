@@ -1,0 +1,11 @@
+var constants = constants = a = 10 b = 25 c = 7;;
+var expression_1 = 35;
+var expression_2 = 4;
+var nested_expression = (list (list 10 25 [[+]]) (list 35 7 [[-]]) (list 28 5 [[mod]]));
+var comment = /#
+Сегодня пасмурно
+пойдет дождь
+
+#/;
+var array_example = (list [[белый]] [[синий]] [[зеленый]]);
+var string_example = [[Просто строка]];
