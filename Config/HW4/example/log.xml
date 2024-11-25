@@ -1,0 +1,1 @@
+<log><instruction command="LOAD_CONST" binary="00 F6 02" /><instruction command="LOAD_MEM" binary="4F 4F 01" /><instruction command="STORE_MEM" binary="66 7F 01 00 00" /><instruction command="NOT" binary="04 63 01 00 00" /></log>

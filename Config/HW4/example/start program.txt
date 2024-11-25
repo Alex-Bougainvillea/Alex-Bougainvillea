@@ -1,0 +1,2 @@
+py C:/Users/A.Kuznecov/PycharmProjects/HW4/main.py assemble C:/Users/A.Kuznecov/PycharmProjects/HW4/example/program.asm C:/Users/A.Kuznecov/PycharmProjects/HW4/example/program.bin C:/Users/A.Kuznecov/PycharmProjects/HW4/example/log.xml
+py C:/Users/A.Kuznecov/PycharmProjects/HW4/main.py interpret C:/Users/A.Kuznecov/PycharmProjects/HW4/example/program.bin 0 5 C:/Users/A.Kuznecov/PycharmProjects/HW4/example/result.xml
